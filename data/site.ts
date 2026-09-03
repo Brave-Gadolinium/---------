@@ -23,6 +23,8 @@ export const siteConfig = {
     { id: "telegram", label: "@Brave_Gadolinium", href: "https://t.me/Brave_Gadolinium" },
     { id: "email", label: "np_v@inbox.ru", href: "mailto:np_v@inbox.ru" },
     { id: "roblox", label: "main_23Kld", href: "https://www.roblox.com/users/4349007560/profile" },
+    { id: "github", label: "Brave-Gadolinium", href: "https://github.com/Brave-Gadolinium/Brave-Gadolinium" },
+    { id: "website", label: "nikita-hazel.vercel.app", href: "https://nikita-hazel.vercel.app" },
   ],
 } as const;
 
