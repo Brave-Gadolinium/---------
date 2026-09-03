@@ -50,7 +50,7 @@ export const capabilities = [
   { title: text("Optimization", "Оптимизация"), description: text("Profiling, refactoring, networking and performance improvements.", "Профилирование, рефакторинг, сеть и повышение производительности."), details: [text("Profiling", "Профилирование"), text("Networking", "Сеть"), text("Memory", "Память"), text("Scalability", "Масштабирование")] },
 ] as const;
 
-export const techStack = ["Luau", "Roblox Studio", "Client / Server", "RemoteEvent", "RemoteFunction", "DataStore", "OrderedDataStore", "PathfindingService", "TweenService", "Git", "Wally", "OOP"] as const;
+export const techStack = ["Luau", "Roblox Studio", "Client / Server", "RemoteEvent", "RemoteFunction", "DataStore", "MemoryStore", "ProfileService", "TeleportService", "PathfindingService", "TweenService", "MicroProfiler", "Rojo", "Wally", "Git", "OOP"] as const;
 
 export const workflow = [
   ["01", text("UNDERSTAND", "ИЗУЧИТЬ"), text("Clarify gameplay requirements, constraints and dependencies.", "Уточнить требования к геймплею, ограничения и зависимости.")],
