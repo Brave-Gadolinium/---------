@@ -13,12 +13,15 @@ import type { Project } from "@/types/project";
 import { LanguageProvider, useLanguage } from "@/components/LanguageProvider";
 import { getMessages } from "@/data/i18n";
 
+const INITIAL_PROJECT_COUNT = 3;
+
 export function Portfolio() {
   return <LanguageProvider><PortfolioContent /></LanguageProvider>;
 }
 
 function PortfolioContent() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [showAllProjects, setShowAllProjects] = useState(false);
   const { language } = useLanguage();
   const copy = getMessages(language);
 
@@ -40,12 +43,6 @@ function PortfolioContent() {
     window.addEventListener("popstate", syncFromUrl);
     return () => window.removeEventListener("popstate", syncFromUrl);
   }, [syncFromUrl]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-visible")), { threshold: 0.12 });
-    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const preventCopy = (event: ClipboardEvent) => {
@@ -73,5 +70,7 @@ function PortfolioContent() {
     setSelectedProject(null);
   }, []);
 
-  return <><Header /><main><Hero /><section id="projects" className="section projects-section"><div className="container"><SectionTitle eyebrow={copy.projects.eyebrow} title={copy.projects.title} description={copy.projects.description} /><div className="project-grid">{projects.map((project) => <ProjectCard key={project.id} project={project} onOpen={openProject} />)}</div></div></section><Capabilities /><TechStack /><WorkProcess /><About /><Contact /></main><Footer /><ProjectModal key={selectedProject?.id ?? "closed"} project={selectedProject} onClose={closeProject} /></>;
+  const visibleProjects = showAllProjects ? projects : projects.slice(0, INITIAL_PROJECT_COUNT);
+
+  return <><Header /><main><Hero /><section id="projects" className="section projects-section"><div className="container"><SectionTitle eyebrow={copy.projects.eyebrow} title={copy.projects.title} description={copy.projects.description} /><div className="project-grid">{visibleProjects.map((project) => <ProjectCard key={project.id} project={project} onOpen={openProject} />)}</div>{projects.length > INITIAL_PROJECT_COUNT && <div className="projects-toggle-wrap"><button className="projects-toggle" type="button" onClick={() => setShowAllProjects((current) => !current)} aria-expanded={showAllProjects}>{showAllProjects ? copy.projects.showLess : copy.projects.viewAll}<span aria-hidden="true">{showAllProjects ? "−" : "+"}</span></button></div>}</div></section><Capabilities /><TechStack /><WorkProcess /><About /><Contact /></main><Footer /><ProjectModal key={selectedProject?.id ?? "closed"} project={selectedProject} onClose={closeProject} /></>;
 }

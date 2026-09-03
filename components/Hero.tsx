@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowDownRight, ArrowRight, Braces, Database, Server } from "lucide-react";
+import { ArrowDownRight, ArrowRight, Braces, Database, Download, Server } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
@@ -29,11 +29,12 @@ export function Hero() {
           <div className="hero-actions">
             <Button href="#projects">{copy.hero.viewProjects} <ArrowDownRight size={18} /></Button>
             <Button href="#contact" variant="secondary">{copy.hero.contact} <ArrowRight size={18} /></Button>
+            <Button href={siteConfig.cv[language]} download variant="secondary">{copy.hero.downloadCv} <Download size={18} /></Button>
           </div>
           <div className="hero-proof">
             <div><strong>{siteConfig.experienceYears}</strong><span>{copy.hero.years}</span></div>
-            <div><strong>04</strong><span>{copy.hero.studios}</span></div>
-            <div><strong>03</strong><span>{copy.hero.releases}</span></div>
+            <div><strong>{siteConfig.studioCount}</strong><span>{copy.hero.studios}</span></div>
+            <div><strong>{siteConfig.projectCount}</strong><span>{copy.hero.releases}</span></div>
           </div>
         </motion.div>
 

@@ -4,6 +4,7 @@ const text = (en: string, ru: string): LocalizedText => ({ en, ru });
 
 export const siteConfig = {
   name: "NIKITA",
+  fullName: text("Nikita Vyacheslavovich Pugachev", "Пугачев Никита Вячеславович"),
   role: text("ROBLOX / LUAU DEVELOPER", "ROBLOX / LUAU РАЗРАБОТЧИК"),
   description: text(
     "I build gameplay systems, client-server architecture and scalable Roblox experiences.",
@@ -11,7 +12,18 @@ export const siteConfig = {
   ),
   availableForWork: true,
   experienceYears: "2+",
-  links: { telegram: "", discord: "", email: "", github: "", roblox: "", linkedin: "" },
+  studioCount: "05",
+  projectCount: "16",
+  profileImage: "/profile/nikita.png",
+  cv: {
+    en: "/cv/nikita-roblox-developer-cv-en.pdf",
+    ru: "/cv/nikita-roblox-developer-cv-ru.pdf",
+  },
+  contacts: [
+    { id: "telegram", label: "@Brave_Gadolinium", href: "https://t.me/Brave_Gadolinium" },
+    { id: "email", label: "np_v@inbox.ru", href: "mailto:np_v@inbox.ru" },
+    { id: "roblox", label: "main_23Kld", href: "https://www.roblox.com/users/4349007560/profile" },
+  ],
 } as const;
 
 export const focusAreas = [
@@ -20,10 +32,11 @@ export const focusAreas = [
 ] as const;
 
 export const workExperience = [
-  { company: "PlayTon", duration: text("6 months", "6 месяцев"), role: text("Roblox Developer", "Roblox-разработчик"), description: text("Production development in a multidisciplinary game team.", "Продакшен-разработка в составе многопрофильной игровой команды.") },
-  { company: "Hybrid", duration: text("3 months", "3 месяца"), role: text("Roblox Developer", "Roblox-разработчик"), description: text("Gameplay implementation and collaboration with production specialists.", "Реализация игровых механик и работа с продакшен-специалистами.") },
-  { company: "Indigo", duration: text("6 months", "6 месяцев"), role: text("Roblox Developer", "Roblox-разработчик"), description: text("Development and support of Roblox gameplay systems.", "Разработка и поддержка игровых систем Roblox.") },
-  { company: "DeepFox", duration: text("1 year", "1 год"), role: text("Roblox Developer", "Roblox-разработчик"), description: text("Long-term production work on maintainable game systems and releases.", "Долгосрочная продакшен-работа над поддерживаемыми игровыми системами и релизами.") },
+  { company: "DeepFox", duration: text("Oct 2025 — Aug 2026 · 11 months", "Октябрь 2025 — август 2026 · 11 месяцев"), role: text("Lua Developer", "Разработчик Lua"), description: text("Built Roblox games from the ground up.", "Создание игр с нуля в Roblox Studio.") },
+  { company: "Indigo", duration: text("May 2025 — Oct 2025 · 6 months", "Май 2025 — октябрь 2025 · 6 месяцев"), role: text("Roblox Developer", "Roblox-разработчик"), description: text("Built games from scratch, supported live projects and shipped updates.", "Создание игр с нуля, поддержка выпущенных проектов и разработка обновлений.") },
+  { company: "Hybrid", duration: text("Apr 2025 — Jul 2025 · 4 months", "Апрель 2025 — июль 2025 · 4 месяца"), role: text("Roblox Developer", "Roblox-разработчик"), description: text("Project-based Roblox Studio development for branded experiences.", "Проектная разработка брендированных игр в Roblox Studio.") },
+  { company: "Maff", duration: text("Apr 2025 · 1 month", "Апрель 2025 · 1 месяц"), role: text("Roblox Studio Developer", "Разработчик Roblox Studio"), description: text("Project development and support, including Luana's Maze for Kinopoisk.", "Создание и поддержка проектов, включая «Лабиринт Луаны» для Кинопоиска.") },
+  { company: "Protagonist", duration: text("Oct 2024 — Mar 2025 · 6 months", "Октябрь 2024 — март 2025 · 6 месяцев"), role: text("Roblox Developer", "Roblox-разработчик"), description: text("Roblox game development in a startup team.", "Разработка Roblox-игр в команде стартапа.") },
 ] as const;
 
 export const capabilities = [

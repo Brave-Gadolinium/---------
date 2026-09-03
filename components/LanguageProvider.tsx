@@ -14,10 +14,22 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("en");
 
   useEffect(() => {
-    document.documentElement.lang = language;
-  }, [language]);
+    const savedLanguage = window.localStorage.getItem("portfolio-language");
+    const initialLanguage: Language = savedLanguage === "ru" || savedLanguage === "en"
+      ? savedLanguage
+      : window.navigator.language.toLowerCase().startsWith("ru") ? "ru" : "en";
 
-  const value = useMemo(() => ({ language, setLanguage }), [language]);
+    document.documentElement.lang = initialLanguage;
+    queueMicrotask(() => setLanguage(initialLanguage));
+  }, []);
+
+  function updateLanguage(nextLanguage: Language) {
+    setLanguage(nextLanguage);
+    document.documentElement.lang = nextLanguage;
+    window.localStorage.setItem("portfolio-language", nextLanguage);
+  }
+
+  const value = useMemo(() => ({ language, setLanguage: updateLanguage }), [language]);
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
 

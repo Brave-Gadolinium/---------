@@ -66,7 +66,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           <motion.div layoutId={`project-${project.id}`} className="project-modal" role="dialog" aria-modal="true" aria-label={`${project.title}: ${copy.modal.tabsLabel}`} tabIndex={-1} ref={dialogRef}>
             <header className="modal-header">
               <div><span>{copy.modal.caseStudy} / {project.index}</span><h2>{project.title}</h2><p>{localize(project.type, language)}</p></div>
-              <div className="modal-actions"><a href={project.robloxUrl} target="_blank" rel="noreferrer">{copy.modal.viewRoblox} <ExternalLink size={16} /></a><button onClick={onClose} aria-label={copy.modal.close}><X /></button></div>
+              <div className="modal-actions">{project.robloxUrl && <a href={project.robloxUrl} target="_blank" rel="noreferrer">{copy.modal.viewRoblox} <ExternalLink size={16} /></a>}<button onClick={onClose} aria-label={copy.modal.close}><X /></button></div>
             </header>
             <div className={`modal-preview project-cover--${project.index}`}>
               {project.video ? <video className="project-video" controls preload="metadata" poster={project.cover}><source src={project.video} type="video/mp4" /></video> : project.cover ? <Image className="modal-preview-image" src={project.cover} alt={localize(project.shortDescription, language)} fill sizes="(max-width: 640px) 100vw, 1100px" /> : <><span>{localize(project.accent, language)}</span><div className="modal-signal" aria-hidden="true"><i /><i /><i /></div></>}
