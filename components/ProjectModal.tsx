@@ -105,7 +105,15 @@ function Overview({ project }: { project: Project }) {
   const { language } = useLanguage();
   const copy = getMessages(language);
   const details = [[copy.modal.scope, localize(project.scope, language)], [copy.modal.role, localize(project.role, language)], [copy.modal.engine, project.engine], [copy.modal.language, project.language], [copy.modal.platform, project.platform], [copy.modal.status, localize(project.status, language)]];
-  return <div className="overview-grid"><div className="overview-main"><span className="content-label">{copy.modal.roleLabel}</span><div className="responsibility-panel"><strong>{localize(project.scope, language)}</strong><ul className="responsibility-list">{project.responsibilities?.map((item, index) => <li key={index}>{localize(item, language)}</li>)}</ul></div><span className="content-label">{copy.modal.overviewLabel}</span><h3>{localize(project.description, language)}</h3><div className="highlight-grid">{project.highlights.map((item, index) => <div key={index}><i />{localize(item, language)}</div>)}</div></div><aside className="project-details"><span className="content-label">{copy.modal.details}</span>{details.map(([key, value]) => <div key={key}><span>{key}</span><strong>{value}</strong></div>)}</aside></div>;
+  return <div className="overview-grid"><div className="overview-main"><span className="content-label">{copy.modal.roleLabel}</span><div className="responsibility-panel"><strong>{localize(project.scope, language)}</strong><ul className="responsibility-list">{project.responsibilities?.map((item, index) => <li key={index}>{localize(item, language)}</li>)}</ul></div><ServerSystem project={project} /><span className="content-label">{copy.modal.overviewLabel}</span><h3>{localize(project.description, language)}</h3><div className="highlight-grid">{project.highlights.map((item, index) => <div key={index}><i />{localize(item, language)}</div>)}</div></div><aside className="project-details"><span className="content-label">{copy.modal.details}</span>{details.map(([key, value]) => <div key={key}><span>{key}</span><strong>{value}</strong></div>)}</aside></div>;
+}
+
+function ServerSystem({ project }: { project: Project }) {
+  const { language } = useLanguage();
+  const nodes = project.systems.length
+    ? project.systems.slice(0, 6).map((system) => localize(system.title, language))
+    : project.tags.slice(0, 6);
+  return <div className="server-system" aria-label="Server system map"><div className="server-core"><span>SERVER</span><strong>{project.title}</strong></div>{nodes.map((node, index) => <button className={`server-node server-node--${index + 1}`} key={`${node}-${index}`} type="button"><span>{String(index + 1).padStart(2, "0")}</span>{node}</button>)}</div>;
 }
 
 function Systems({ project }: { project: Project }) {

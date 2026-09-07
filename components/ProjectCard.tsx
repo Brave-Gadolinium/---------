@@ -22,6 +22,7 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
         {project.cover && <Image className="project-cover-image" src={project.cover} alt={localize(project.shortDescription, language)} fill sizes="(max-width: 900px) 100vw, 1180px" priority={project.index === "01"} />}
         <span className="cover-index">{copy.projects.project} / {project.index}</span>
         <span className="scope-badge">{localize(project.scope, language)}</span>
+        <div className="card-system-motion" aria-hidden="true"><i /><i /><i /></div>
         {!project.cover && <div className="cover-art cover-art--project"><i /><i /><i /><div><small>{localize(project.scope, language)}</small><strong>{project.title}</strong><span>{project.tags.slice(0, 3).join(" / ")}</span></div></div>}
         <span className="cover-label">{localize(project.accent, language)}</span>
         <span className="open-project">{copy.projects.open} <ArrowUpRight size={16} /></span>

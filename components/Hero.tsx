@@ -1,7 +1,8 @@
 "use client";
 
-import { ArrowDownRight, ArrowRight, Braces, Database, Download, Server } from "lucide-react";
+import { ArrowDownRight, ArrowRight, Braces, Database, Download, RadioTower, Server, ShieldCheck } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
+import type { CSSProperties } from "react";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
 import { getMessages } from "@/data/i18n";
@@ -19,6 +20,18 @@ export function Hero() {
     <section className="hero" id="top">
       <div className="hero-grid" aria-hidden="true" />
       <div className="hero-glow" aria-hidden="true" />
+      <div className="hero-code-rain" aria-hidden="true">
+        {["RemoteEvent:FireServer()", "ProfileService:LoadProfileAsync()", "DataStore reconcile", "RewardService.Grant()", "Matchmaking.Queue()", "Server validates request"].map((line, index) => <span key={line} style={{ "--line": index } as CSSProperties}>{line}</span>)}
+      </div>
+      <div className="hero-system-bg" aria-hidden="true">
+        <div className="hero-system-node hero-system-node--client"><RadioTower size={16} /><span>CLIENT</span></div>
+        <div className="hero-system-node hero-system-node--server"><Server size={18} /><span>SERVER</span></div>
+        <div className="hero-system-node hero-system-node--data"><Database size={16} /><span>DATA</span></div>
+        <div className="hero-system-node hero-system-node--secure"><ShieldCheck size={16} /><span>VALIDATION</span></div>
+        <i className="hero-link hero-link--one" />
+        <i className="hero-link hero-link--two" />
+        <i className="hero-link hero-link--three" />
+      </div>
       <div className="container hero-inner">
         <motion.div className="hero-copy" {...entrance} transition={{ duration: 0.6 }}>
           <div className="availability"><span /> {copy.hero.availability}</div>
