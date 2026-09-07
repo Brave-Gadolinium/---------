@@ -1,7 +1,15 @@
 import type { Project } from "@/types/project";
 import type { LocalizedText } from "@/types/i18n";
+import { projectDetails } from "@/data/projectDetails";
 
 const text = (en: string, ru: string): LocalizedText => ({ en, ru });
+const projectScopes = {
+  builtFromScratch: text("Built from scratch", "Создан с нуля"),
+  gameUpdate: text("Game update", "Обновление игры"),
+  majorUpdate: text("Major game update", "Крупное обновление игры"),
+  hubAndStandalone: text("Hub update + standalone game", "Доработка мира + отдельная игра"),
+  brandActivation: text("Brand activation", "Брендированная активация"),
+};
 
 const architecture = {
   nodes: [
@@ -22,10 +30,11 @@ const existingProjects: Project[] = [
     id: "nightmare-survivors",
     index: "01",
     title: "NIGHTMARE SURVIVORS",
-    type: text("Survival / Roguelite Experience", "Survival / Roguelite проект"),
+    type: text("Survival / Roguelite · Built from scratch", "Survival / Roguelite · Создан с нуля"),
     shortDescription: text("Team up, build a base and survive increasingly dangerous nights filled with anomalies.", "Собери команду, построй базу и переживи всё более опасные ночи с аномалиями."),
     description: text("A cooperative survival experience for parties of up to four players. The production architecture separates the lobby and survival place, keeps combat, resources, purchases and run progression server-authoritative, and supports configurable night scenarios, base construction, crafting, personal enhancements and resumable solo or party sessions.", "Кооперативное выживание для пати до четырёх игроков. Продакшен-архитектура разделяет лобби и плейс выживания, оставляет бой, ресурсы, покупки и прогрессию забега под контролем сервера и поддерживает настраиваемые сценарии ночей, строительство базы, крафт, личные усиления и восстановление одиночных или групповых сессий."),
-    role: text("Gameplay / Systems Developer", "Разработчик геймплея и систем"),
+    role: text("Gameplay / Systems Developer · Built from scratch", "Разработчик геймплея и систем · игра с нуля"),
+    scope: projectScopes.builtFromScratch,
     engine: "Roblox Studio",
     language: "Luau",
     platform: "Roblox",
@@ -54,10 +63,11 @@ const existingProjects: Project[] = [
     id: "strength-clicker",
     index: "02",
     title: "STRENGTH CLICKER",
-    type: text("Simulator / Progression Experience", "Симулятор / Прогрессия"),
+    type: text("Simulator / Progression · Built from scratch", "Симулятор / Прогрессия · Создан с нуля"),
     shortDescription: text("Train strength, evolve fireballs, collect pets and compete for the King of the Hill.", "Тренируй силу, улучшай огненные шары, собирай питомцев и сражайся за вершину холма."),
     description: text("A content-rich progression simulator where players train strength, unlock fireball evolutions, collect pets and compete in PvP. The project uses profile-backed progression and a modular content layer for powers, pets, areas, quests, seasons, events, boosts, ranks, trades and clans.", "Контентный симулятор прогрессии, где игроки тренируют силу, открывают эволюции огненных шаров, собирают питомцев и участвуют в PvP. Проект использует профильное сохранение и модульный слой контента для сил, питомцев, зон, заданий, сезонов, событий, усилений, рангов, трейдов и кланов."),
-    role: text("Systems Developer", "Разработчик систем"),
+    role: text("Systems Developer · Built from scratch", "Разработчик систем · игра с нуля"),
+    scope: projectScopes.builtFromScratch,
     engine: "Roblox Studio",
     language: "Luau",
     platform: "Roblox",
@@ -85,10 +95,11 @@ const existingProjects: Project[] = [
     id: "kinopoisk-world",
     index: "03",
     title: "KINOPOISK WORLD",
-    type: text("Branded Social Experience", "Брендированный социальный проект"),
+    type: text("Branded Social Experience · Hub update and standalone game", "Брендированный социальный проект · доработка мира и отдельная игра"),
     shortDescription: text("A branded cinema hub connecting multiple game worlds inspired by Kinopoisk films and series.", "Брендированный кинотеатр-хаб с игровыми мирами по мотивам фильмов и сериалов Кинопоиска."),
     description: text("A commercial Roblox universe where each title becomes a separate themed world: duels, pursuits, tower challenges, detective games, races, music activities and a museum, all connected through a central cinema hub.", "Коммерческая Roblox-вселенная, где каждый тайтл превращается в отдельный тематический мир: дуэли, погони, башни, детективные игры, гонки, музыкальные активности и музей, объединённые центральным кинотеатром."),
-    role: text("Roblox Developer", "Roblox-разработчик"),
+    role: text("Roblox Developer · Hub updates and Luana's Maze from scratch", "Roblox-разработчик · доработка основного мира и Лабиринт Луаны с нуля"),
+    scope: projectScopes.hubAndStandalone,
     engine: "Roblox Studio",
     language: "Luau",
     platform: "Roblox",
@@ -113,10 +124,11 @@ const existingProjects: Project[] = [
     id: "upgrade-your-brainrot",
     index: "04",
     title: "UPGRADE YOUR BRAINROT",
-    type: text("Tycoon / Idle Evolution", "Тайкун / Idle-прогрессия"),
+    type: text("Tycoon / Idle Evolution · Game update", "Тайкун / Idle-прогрессия · обновление игры"),
     shortDescription: text("Buy eggs, hatch rare units and evolve a base that keeps progressing offline.", "Покупай яйца, получай редких юнитов и развивай базу даже вне игры."),
     description: text("A base-building tycoon where players buy eggs from a conveyor, place them into slots, hatch income-producing units and upgrade both the conveyor and their Brainrots to reach increasingly rare evolutions.", "Тайкун со строительством базы: игрок покупает яйца с конвейера, размещает их в слотах, получает приносящих доход юнитов и улучшает конвейер и Brainrot-персонажей ради всё более редких эволюций."),
-    role: text("Roblox Developer", "Roblox-разработчик"), engine: "Roblox Studio", language: "Luau", platform: "Roblox", status: text("Released", "Выпущен"),
+    role: text("Roblox Developer · Game update", "Roblox-разработчик · обновление игры"), engine: "Roblox Studio", language: "Luau", platform: "Roblox", status: text("Released", "Выпущен"),
+    scope: projectScopes.gameUpdate,
     robloxUrl: "https://www.roblox.com/games/104609916234164/Upgrade-Your-Brainrot",
     cover: "/projects/upgrade-your-brainrot/cover.webp", accent: text("EVOLVE OFFLINE", "ЭВОЛЮЦИЯ ОФЛАЙН"),
     tags: ["Tycoon", "Offline Progress", "Rarities", "Economy"],
@@ -137,10 +149,11 @@ const existingProjects: Project[] = [
     id: "dig-bomb-brainrot-rush",
     index: "05",
     title: "DIG & BOMB: BRAINROT RUSH!",
-    type: text("Mining / PvP Tycoon", "Майнинг / PvP-тайкун"),
+    type: text("Mining / PvP Tycoon · Built from scratch", "Майнинг / PvP-тайкун · Создан с нуля"),
     shortDescription: text("Blast deeper underground, recover rare units and turn them into a growing base economy.", "Взрывай землю, находи редких юнитов и развивай экономику своей базы."),
     description: text("An explosive mining tycoon built around a service-controller architecture. The server owns profiles, slot income, offline rewards, monetization and timed events, while staged terrain generation keeps the mine playable during startup and restores only changed chunks between rounds.", "Взрывной майнинг-тайкун с архитектурой сервисов и контроллеров. Сервер управляет профилями, доходом слотов, офлайн-наградами, монетизацией и временными событиями, а поэтапная генерация шахты ускоряет вход в игру и восстанавливает между раундами только изменённые чанки."),
-    role: text("Roblox Developer", "Roblox-разработчик"), engine: "Roblox Studio", language: "Luau", platform: "Roblox", status: text("Released", "Выпущен"),
+    role: text("Roblox Developer · Built from scratch", "Roblox-разработчик · игра с нуля"), engine: "Roblox Studio", language: "Luau", platform: "Roblox", status: text("Released", "Выпущен"),
+    scope: projectScopes.builtFromScratch,
     robloxUrl: "https://www.roblox.com/games/121277380801084/Dig-Bomb-Brainrot-Rush",
     cover: "/projects/dig-bomb-brainrot-rush/cover.webp", accent: text("DIG · BLAST · BUILD", "КОПАЙ · ВЗРЫВАЙ · СТРОЙ"),
     tags: ["Mining", "Server Authority", "Offline Income", "FTUE"],
@@ -161,10 +174,11 @@ const existingProjects: Project[] = [
     id: "key-jump-brainrots",
     index: "06",
     title: "+1 KEY +1 JUMP FOR BRAINROTS",
-    type: text("Flying / Collection Simulator", "Симулятор полёта и коллекционирования"),
+    type: text("Flying / Collection Simulator · Major game update", "Симулятор полёта и коллекционирования · крупное обновление игры"),
     shortDescription: text("Fly with bubble-gum balloons, collect units and escape hazards on the way back to base.", "Летай на пузыре, собирай юнитов и избегай опасностей по пути на базу."),
     description: text("A vertical collection simulator where players improve flight, survive obstacle and disaster runs, recover Brainrots and Lucky Blocks, and place units at their base. The runtime persists reward metadata from drop generation through inventory and slots, enabling timed special units with configurable income, speed, height and obstacle abilities.", "Вертикальный симулятор коллекционирования, где игроки улучшают полёт, проходят полосы препятствий и события-катастрофы, собирают Brainrot-юнитов и Lucky Blocks и размещают их на базе. Runtime сохраняет метаданные награды от генерации до инвентаря и слота, поддерживая временных особых юнитов с настраиваемыми бонусами дохода, скорости, высоты и отключения препятствий."),
-    role: text("Roblox Developer", "Roblox-разработчик"), engine: "Roblox Studio", language: "Luau", platform: "Roblox", status: text("Beta", "Бета"),
+    role: text("Roblox Developer · Major game update", "Roblox-разработчик · крупное обновление игры"), engine: "Roblox Studio", language: "Luau", platform: "Roblox", status: text("Beta", "Бета"),
+    scope: projectScopes.majorUpdate,
     robloxUrl: "https://www.roblox.com/games/134867980028583/1-Key-1-Jump-for-Brainrots",
     cover: "/projects/key-jump-brainrots/cover.png", accent: text("FLY · COLLECT · ESCAPE", "ЛЕТИ · СОБИРАЙ · УБЕГАЙ"),
     tags: ["Flying", "Lucky Blocks", "Timed Abilities", "Persistence"],
@@ -185,10 +199,11 @@ const existingProjects: Project[] = [
     id: "dark-survivor",
     index: "07",
     title: "DARK SURVIVOR",
-    type: text("Horde Survival / Roguelite", "Выживание против орд / Roguelite"),
+    type: text("Horde Survival / Roguelite · Built from scratch", "Выживание против орд / Roguelite · Создан с нуля"),
     shortDescription: text("Run, dodge and combine more than 40 weapons and upgrades against a growing horde.", "Беги, уклоняйся и комбинируй более 40 видов оружия и улучшений против растущей орды."),
     description: text("A Roblox horde-survival experience inspired by the fast escalating runs of Megabonk: players build powerful weapon setups, destroy large enemy waves, defeat bosses and push their survival time.", "Roblox-игра на выживание против орд в духе быстро нарастающих забегов Megabonk: игроки собирают сильные комбинации оружия, уничтожают волны врагов, побеждают боссов и стараются продержаться как можно дольше."),
-    role: text("Roblox Developer", "Roblox-разработчик"), engine: "Roblox Studio", language: "Luau", platform: "Roblox", status: text("Released", "Выпущен"),
+    role: text("Roblox Developer · Built from scratch", "Roblox-разработчик · игра с нуля"), engine: "Roblox Studio", language: "Luau", platform: "Roblox", status: text("Released", "Выпущен"),
+    scope: projectScopes.builtFromScratch,
     robloxUrl: "https://www.roblox.com/games/93340206427348/Dark-Survivor",
     cover: "/projects/dark-survivor/cover.webp", accent: text("SURVIVE THE HORDE", "ПЕРЕЖИВИ ОРДУ"),
     tags: ["Horde Survival", "40+ Weapons", "Bosses", "Upgrades"],
@@ -207,10 +222,11 @@ const existingProjects: Project[] = [
     id: "scam-empire",
     index: "08",
     title: "BUILD A SCAM EMPIRE!",
-    type: text("Live Tycoon · 49M visits", "Live-тайкун · 49 млн посещений"),
+    type: text("Live Tycoon Update · 49M visits", "Обновление live-тайкуна · 49 млн посещений"),
     shortDescription: text("Maintained and updated a plot-based tycoon with a 49-million-visit audience.", "Поддержка и обновление тайкуна на личном участке с аудиторией в 49 млн посещений."),
     description: text("A mature live tycoon where players place workers, collect and sell cards, merge units and expand a persistent offline economy. I supported production updates across a broad live-game surface that also includes rebirths, crafting, daily rewards, quests, leaderboards, player raids, corporations and monetization.", "Зрелый live-тайкун, где игроки размещают работников, собирают и продают карты, объединяют юнитов и развивают постоянную экономику с офлайн-доходом. Я поддерживал продакшен-обновления большой live-системы, включающей перерождения, крафт, ежедневные награды, задания, таблицы лидеров, рейды на игроков, корпорации и монетизацию."),
-    role: text("Live Ops & Updates Developer", "Разработчик поддержки и обновлений"), engine: "Roblox Studio", language: "Luau", platform: "Roblox", status: text("Released", "Выпущен"),
+    role: text("Live Ops & Updates Developer · Game update", "Разработчик обновления игры"), engine: "Roblox Studio", language: "Luau", platform: "Roblox", status: text("Released", "Выпущен"),
+    scope: projectScopes.gameUpdate,
     robloxUrl: "https://www.roblox.com/games/83942919686609/Build-a-Scam-Empire",
     cover: "/projects/scam-empire/cover.webp", accent: text("49M VISITS", "49 МЛН ПОСЕЩЕНИЙ"),
     tags: ["Live Ops", "Data Migration", "Monetization", "Social Systems"],
@@ -236,6 +252,7 @@ interface CommercialProjectInput {
   type: LocalizedText;
   summary: LocalizedText;
   role: LocalizedText;
+  scope: LocalizedText;
   url: string;
   accent: LocalizedText;
   tags: string[];
@@ -251,6 +268,7 @@ function commercialProject(input: CommercialProjectInput): Project {
     shortDescription: input.summary,
     description: input.summary,
     role: input.role,
+    scope: input.scope,
     engine: "Roblox Studio",
     language: "Luau",
     platform: "Roblox",
@@ -268,52 +286,88 @@ function commercialProject(input: CommercialProjectInput): Project {
 
 const commercialProjects: Project[] = [
   commercialProject({
-    id: "dig-to-earth", title: "DIG TO EARTH", type: text("Live Game · 248M visits", "Live-проект · 248 млн посещений"),
+    id: "dig-to-earth", title: "DIG TO EARTH", type: text("Live Game · Major game update · 248M visits", "Live-проект · крупное обновление игры · 248 млн посещений"),
     summary: text("Supported a large-scale live Roblox experience and delivered production updates.", "Поддержка крупного действующего Roblox-проекта и выпуск продакшен-обновлений."),
-    role: text("Live Ops & Updates Developer", "Разработчик поддержки и обновлений"), url: "https://www.roblox.com/share?code=e9350038a23e36429c50a81e051b7f4a&type=ExperienceDetails&stamp=1760600757324", accent: text("248M VISITS", "248 МЛН ПОСЕЩЕНИЙ"), tags: ["Live Ops", "Updates", "Production"],
+    role: text("Live Ops & Updates Developer · Major game update", "Разработчик крупного обновления игры"), scope: projectScopes.majorUpdate, url: "https://www.roblox.com/share?code=e9350038a23e36429c50a81e051b7f4a&type=ExperienceDetails&stamp=1760600757324", accent: text("248M VISITS", "248 МЛН ПОСЕЩЕНИЙ"), tags: ["Live Ops", "Major Update", "Production"],
     highlights: [text("248M visits at portfolio submission", "248 млн посещений на момент отправки портфолио"), text("Live project support", "Поддержка действующего проекта"), text("Production updates", "Продакшен-обновления")],
   }),
   commercialProject({
-    id: "flying-wings", title: "FLYING WINGS", type: text("Live Game · 32.2M visits", "Live-проект · 32,2 млн посещений"),
+    id: "flying-wings", title: "FLYING WINGS", type: text("Live Game · Major game update · 32.2M visits", "Live-проект · крупное обновление игры · 32,2 млн посещений"),
     summary: text("Supported the released experience and shipped updates for a multi-million player audience.", "Поддержка выпущенного проекта и разработка обновлений для многомиллионной аудитории."),
-    role: text("Live Ops & Updates Developer", "Разработчик поддержки и обновлений"), url: "https://www.roblox.com/share?code=23cc6a488c932e43bc4922cd65a28a1f&type=ExperienceDetails&stamp=1760598087876", accent: text("32.2M VISITS", "32,2 МЛН ПОСЕЩЕНИЙ"), tags: ["Live Ops", "Updates", "Gameplay"],
+    role: text("Live Ops & Updates Developer · Major game update", "Разработчик крупного обновления игры"), scope: projectScopes.majorUpdate, url: "https://www.roblox.com/share?code=23cc6a488c932e43bc4922cd65a28a1f&type=ExperienceDetails&stamp=1760598087876", accent: text("32.2M VISITS", "32,2 МЛН ПОСЕЩЕНИЙ"), tags: ["Live Ops", "Major Update", "Gameplay"],
     highlights: [text("32.2M visits at portfolio submission", "32,2 млн посещений на момент отправки портфолио"), text("Project support", "Поддержка проекта"), text("Content updates", "Контентные обновления")],
   }),
   commercialProject({
-    id: "my-pet-jelly", title: "MY PET JELLY", type: text("Live Simulator · 12.9M visits", "Live-симулятор · 12,9 млн посещений"),
+    id: "my-pet-jelly", title: "MY PET JELLY", type: text("Live Simulator · Major game update · 12.9M visits", "Live-симулятор · крупное обновление игры · 12,9 млн посещений"),
     summary: text("Maintained and updated a persistent pet-growth simulator with offline progression.", "Поддержка и обновление симулятора роста питомца с офлайн-прогрессией."),
-    role: text("Live Ops & Updates Developer", "Разработчик поддержки и обновлений"), url: "https://www.roblox.com/share?code=d543daec5dd48347a429984fc0b4f687&type=ExperienceDetails&stamp=1760600626261", accent: text("12.9M VISITS", "12,9 МЛН ПОСЕЩЕНИЙ"), tags: ["Simulator", "Persistence", "Live Ops"],
+    role: text("Live Ops & Updates Developer · Major game update", "Разработчик крупного обновления игры"), scope: projectScopes.majorUpdate, url: "https://www.roblox.com/share?code=d543daec5dd48347a429984fc0b4f687&type=ExperienceDetails&stamp=1760600626261", accent: text("12.9M VISITS", "12,9 МЛН ПОСЕЩЕНИЙ"), tags: ["Simulator", "Major Update", "Live Ops"],
     highlights: [text("12.9M visits at portfolio submission", "12,9 млн посещений на момент отправки портфолио"), text("Offline progression", "Офлайн-прогрессия"), text("Live updates", "Обновления проекта")],
   }),
   commercialProject({
-    id: "merge-brainrot-commercial", title: "MERGE BRAINROT", type: text("Merge Simulator · Live Ops", "Merge-симулятор · Live Ops"),
+    id: "merge-brainrot-commercial", title: "MERGE BRAINROT", type: text("Merge Simulator · Major game update", "Merge-симулятор · крупное обновление игры"),
     summary: text("Supported the released merge-based simulator and developed project updates.", "Поддержка выпущенного merge-симулятора и разработка обновлений проекта."),
-    role: text("Live Ops & Updates Developer", "Разработчик поддержки и обновлений"), url: "https://www.roblox.com/share?code=f69fdfe11f41fd4aaa0bd04f83240818&type=ExperienceDetails&stamp=1760600772559", accent: text("MERGE · UPGRADE", "ОБЪЕДИНЯЙ · УЛУЧШАЙ"), tags: ["Merge", "Simulator", "Updates"],
+    role: text("Live Ops & Updates Developer · Major game update", "Разработчик крупного обновления игры"), scope: projectScopes.majorUpdate, url: "https://www.roblox.com/share?code=f69fdfe11f41fd4aaa0bd04f83240818&type=ExperienceDetails&stamp=1760600772559", accent: text("MERGE · UPGRADE", "ОБЪЕДИНЯЙ · УЛУЧШАЙ"), tags: ["Merge", "Simulator", "Major Update"],
     highlights: [text("Live game support", "Поддержка действующей игры"), text("Update development", "Разработка обновлений"), text("Progression systems", "Системы прогрессии")],
   }),
   commercialProject({
     id: "brainrot-bowling", title: "BRAINROT BOWLING", type: text("Bowling Game · Built from scratch", "Боулинг · Создан с нуля"),
     summary: text("Built a complete Roblox bowling experience from the ground up.", "Создание полноценной Roblox-игры про боулинг с нуля."),
-    role: text("Game Developer", "Разработчик игры"), url: "", accent: text("BUILT FROM SCRATCH", "СОЗДАНО С НУЛЯ"), tags: ["From Scratch", "Gameplay", "Bowling"],
+    role: text("Game Developer", "Разработчик игры"), scope: projectScopes.builtFromScratch, url: "", accent: text("BUILT FROM SCRATCH", "СОЗДАНО С НУЛЯ"), tags: ["From Scratch", "Gameplay", "Bowling"],
     highlights: [text("End-to-end development", "Полный цикл разработки"), text("Core bowling gameplay", "Основной геймплей боулинга"), text("Production release", "Подготовка к релизу")],
   }),
   commercialProject({
     id: "sportik-city", title: "SPORTIK CITY", type: text("Branded Experience · Built from scratch", "Брендированный проект · Создан с нуля"),
     summary: text("Built a branded Roblox game for Svyatoy Istochnik with Hybrid Metaverse, featuring tag, training, quiz and duel activities.", "В команде Hybrid Metaverse с нуля разработал игру про Спортика для «Святого источника»: салки, качалка, квиз и дуэль."),
-    role: text("Roblox Developer · Hybrid Metaverse", "Roblox-разработчик · Hybrid Metaverse"), url: "https://www.roblox.com/share?code=cf3ba5c61ebd624097901f8b9e5f9ef0&type=ExperienceDetails&stamp=1760601177743", accent: text("BRANDED WORLD", "БРЕНДИРОВАННЫЙ МИР"), tags: ["Brand", "Minigames", "From Scratch"],
+    role: text("Roblox Developer · Built from scratch · Hybrid Metaverse", "Roblox-разработчик · игра с нуля · Hybrid Metaverse"), scope: projectScopes.builtFromScratch, url: "https://www.roblox.com/share?code=cf3ba5c61ebd624097901f8b9e5f9ef0&type=ExperienceDetails&stamp=1760601177743", accent: text("BRANDED WORLD", "БРЕНДИРОВАННЫЙ МИР"), tags: ["Brand", "Minigames", "From Scratch"],
     highlights: [text("Built from scratch", "Создан с нуля"), text("Four gameplay activities", "Четыре игровые активности"), text("Hybrid Metaverse team", "Команда Hybrid Metaverse")],
   }),
   commercialProject({
     id: "dobry-back-to-school", title: "DOBRY: BACK TO SCHOOL", type: text("Branded World Activation", "Активация брендированного мира"),
     summary: text("Shipped a new Dobry World activation with Hybrid: treasure hunting, quests, new UGC and ships.", "В команде Hybrid выпустил активацию мира «Добрый: снова в школу»: поиск сокровищ, квесты, новые UGC и корабли."),
-    role: text("Roblox Developer · Hybrid", "Roblox-разработчик · Hybrid"), url: "https://www.roblox.com/share?code=20fb6959b7b2fc4899ffbbacd181acb3&type=ExperienceDetails&stamp=1760601301686", accent: text("BACK TO SCHOOL", "СНОВА В ШКОЛУ"), tags: ["Brand", "Quests", "UGC"],
+    role: text("Roblox Developer · Hybrid", "Roblox-разработчик · Hybrid"), scope: projectScopes.brandActivation, url: "https://www.roblox.com/share?code=20fb6959b7b2fc4899ffbbacd181acb3&type=ExperienceDetails&stamp=1760601301686", accent: text("BACK TO SCHOOL", "СНОВА В ШКОЛУ"), tags: ["Brand", "Quests", "UGC"],
     highlights: [text("Released activation", "Активация выпущена в релиз"), text("Treasure hunt and quests", "Поиск сокровищ и квесты"), text("New UGC and ships", "Новые UGC и корабли")],
   }),
   commercialProject({
     id: "luana-maze", title: "LUANA'S MAZE", type: text("Kinopoisk Branded Game", "Брендированная игра Кинопоиска"),
     summary: text("Created a standalone Luana's Maze game with the Maff team as part of the Kinopoisk project.", "В команде Maff создал отдельную игру «Лабиринт Луаны» в рамках проекта с Кинопоиском."),
-    role: text("Roblox Developer · Maff", "Roblox-разработчик · Maff"), url: "https://www.roblox.com/share?code=2530e96aa9867442a21f70ec7583ae37&type=ExperienceDetails&stamp=1760601241775", accent: text("KINOPOISK WORLD", "МИР КИНОПОИСКА"), tags: ["Kinopoisk", "Maze", "Team Project"],
+    role: text("Roblox Developer · Built from scratch · Maff", "Roblox-разработчик · игра с нуля · Maff"), scope: projectScopes.builtFromScratch, url: "https://www.roblox.com/share?code=2530e96aa9867442a21f70ec7583ae37&type=ExperienceDetails&stamp=1760601241775", accent: text("KINOPOISK WORLD", "МИР КИНОПОИСКА"), tags: ["Kinopoisk", "Maze", "From Scratch"],
     highlights: [text("Standalone game", "Отдельная игра"), text("Kinopoisk collaboration", "Коллаборация с Кинопоиском"), text("Maff development team", "Команда разработки Maff")],
+  }),
+  commercialProject({
+    id: "upgrade-ufo", title: "UPGRADE UFO FOR LUCKYBLOCK", type: text("Lucky Block Tycoon · Built from scratch", "Lucky Block-тайкун · Создан с нуля"),
+    summary: text("Built a Roblox progression game around UFO upgrades, base slots, drops, daily rewards and events.", "С нуля разработал Roblox-игру с улучшением НЛО, базами, слотами, системой дропа, дейли-наградами и ивентами."),
+    role: text("Game Developer", "Разработчик игры"), scope: projectScopes.builtFromScratch, url: "https://www.roblox.com/games/123227013921723/Upgrade-UFO-For-LuckyBlock", accent: text("UFO UPGRADES", "УЛУЧШЕНИЕ НЛО"), tags: ["From Scratch", "Lucky Block", "Drops"],
+    highlights: [text("Built from scratch", "Создан с нуля"), text("UFO upgrade progression", "Прогрессия улучшения НЛО"), text("Drop and event systems", "Системы дропа и ивентов")],
+  }),
+  commercialProject({
+    id: "brainrot-bomb-rush", title: "BRAINROT BOMB RUSH", type: text("Round Game · Built from scratch", "Раундовая игра · Создана с нуля"),
+    summary: text("Built a round-based Brainrot game with winner and loser flows, daily rewards, funnels and A/B tests.", "С нуля разработал раундовую Brainrot-игру с логикой победителя и проигравшего, дейли-наградами, воронками и A/B-тестами."),
+    role: text("Game Developer", "Разработчик игры"), scope: projectScopes.builtFromScratch, url: "https://www.roblox.com/games/95010755108735/Brainrot-Bomb-Rush", accent: text("ROUND LOOP", "РАУНДОВЫЙ ЦИКЛ"), tags: ["From Scratch", "Rounds", "A/B Tests"],
+    highlights: [text("Built from scratch", "Создана с нуля"), text("Round lifecycle", "Жизненный цикл раунда"), text("Funnels and testing", "Воронки и тесты")],
+  }),
+  commercialProject({
+    id: "squad-wars", title: "SQUAD WARS", type: text("Squad Combat · Built from scratch", "Командные сражения · Создано с нуля"),
+    summary: text("Built a squad-based Roblox game with bases, slots, offline income, matchmaking and NPC combat.", "С нуля разработал Roblox-игру с базами, слотами, офлайн-доходом, матчмейкингом и сражениями NPC."),
+    role: text("Game Developer", "Разработчик игры"), scope: projectScopes.builtFromScratch, url: "https://www.roblox.com/games/138998070906014/Squad-Wars", accent: text("SQUAD COMBAT", "КОМАНДНЫЙ БОЙ"), tags: ["From Scratch", "Matchmaking", "NPC Combat"],
+    highlights: [text("Built from scratch", "Создано с нуля"), text("Matchmaking system", "Система матчмейкинга"), text("NPC battles", "Сражения NPC")],
+  }),
+  commercialProject({
+    id: "break-rocks-brainrots", title: "BREAK ROCKS FOR BRAINROTS", type: text("Mining Tycoon · Built from scratch", "Майнинг-тайкун · Создан с нуля"),
+    summary: text("Built a mining and base-progression game with Brainrot collection, index, slots, online and offline income, daily rewards and events.", "С нуля разработал игру с добыванием брейнротов, индексом, базами, слотами, онлайн- и офлайн-доходом, дейли-наградами и ивентами."),
+    role: text("Game Developer", "Разработчик игры"), scope: projectScopes.builtFromScratch, url: "https://www.roblox.com/games/117669553369892/Break-Rocks-for-Brainrots", accent: text("BREAK & COLLECT", "ЛОМАЙ И СОБИРАЙ"), tags: ["From Scratch", "Mining", "Base Economy"],
+    highlights: [text("Built from scratch", "Создан с нуля"), text("Brainrot collection loop", "Цикл сбора брейнротов"), text("Online and offline income", "Онлайн- и офлайн-доход")],
+  }),
+  commercialProject({
+    id: "aliens-steal-brainrots", title: "ALIENS STEAL BRAINROTS", type: text("Base Economy · Built from scratch", "Экономика базы · Создана с нуля"),
+    summary: text("Built a Roblox game around the core collection loop, bases, online and offline income, index progression and monetization.", "С нуля разработал Roblox-игру с основным циклом сбора, базами, онлайн- и офлайн-доходом, индексом и полной монетизацией."),
+    role: text("Game Developer", "Разработчик игры"), scope: projectScopes.builtFromScratch, url: "https://www.roblox.com/games/87533719075532/Aliens-steal-Brainrots", accent: text("ALIEN ECONOMY", "ИНДЕКС И БАЗА"), tags: ["From Scratch", "Core Loop", "Monetization"],
+    highlights: [text("Built from scratch", "Создана с нуля"), text("Full monetization surface", "Полная монетизация"), text("Index and base economy", "Индекс и экономика базы")],
+  }),
+  commercialProject({
+    id: "pull-the-sword", title: "PULL THE SWORD! BATTLE SIMULATOR", type: text("Battle Simulator · Built from scratch", "Боевой симулятор · Создан с нуля"),
+    summary: text("Built a battle simulator with sword pulling, NPC combat, cutscenes, core progression and monetization.", "С нуля разработал боевой симулятор с вытягиванием меча, сражениями с NPC, катсценами, основным циклом прогрессии и монетизацией."),
+    role: text("Game Developer", "Разработчик игры"), scope: projectScopes.builtFromScratch, url: "https://www.roblox.com/games/116365244400370/Pull-the-Sword-Battle-Simulator", accent: text("PULL & FIGHT", "ТЯНИ И СРАЖАЙСЯ"), tags: ["From Scratch", "Combat", "Monetization"],
+    highlights: [text("Built from scratch", "Создан с нуля"), text("Sword-pulling mechanic", "Механика вытягивания меча"), text("NPC combat and cutscenes", "Бой с NPC и катсцены")],
   }),
 ];
 
@@ -332,6 +386,15 @@ function getCompletenessScore(project: Project): number {
   );
 }
 
+function getScopePriority(project: Project): number {
+  if (project.scope === projectScopes.builtFromScratch) return 0;
+  if (project.scope === projectScopes.hubAndStandalone) return 1;
+  if (project.scope === projectScopes.majorUpdate) return 2;
+  if (project.scope === projectScopes.gameUpdate) return 3;
+  if (project.scope === projectScopes.brandActivation) return 4;
+  return 5;
+}
+
 const orderedProjects = [...commercialProjects, ...existingProjects].sort((left, right) => {
   const leftFeaturedIndex = featuredProjectIds.indexOf(left.id as typeof featuredProjectIds[number]);
   const rightFeaturedIndex = featuredProjectIds.indexOf(right.id as typeof featuredProjectIds[number]);
@@ -342,10 +405,18 @@ const orderedProjects = [...commercialProjects, ...existingProjects].sort((left,
     return leftFeaturedIndex - rightFeaturedIndex;
   }
 
+  const scopeDelta = getScopePriority(left) - getScopePriority(right);
+  if (scopeDelta !== 0) return scopeDelta;
+
   return getCompletenessScore(right) - getCompletenessScore(left);
 });
 
-export const projects: Project[] = orderedProjects.map((project, index) => ({
-  ...project,
-  index: String(index + 1).padStart(2, "0"),
-}));
+export const projects: Project[] = orderedProjects.map((project, index) => {
+  const details = projectDetails[project.id];
+  return {
+    ...project,
+    index: String(index + 1).padStart(2, "0"),
+    responsibilities: details?.responsibilities ?? project.highlights,
+    codeExamples: details?.codeExamples ?? project.codeExamples,
+  };
+});

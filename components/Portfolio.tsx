@@ -70,7 +70,13 @@ function PortfolioContent() {
     setSelectedProject(null);
   }, []);
 
+  const projectStats = [
+    [copy.projects.stats.total, projects.length],
+    [copy.projects.stats.builtFromScratch, projects.filter((project) => project.scope.en === "Built from scratch").length],
+    [copy.projects.stats.majorUpdates, projects.filter((project) => project.scope.en === "Major game update").length],
+    [copy.projects.stats.liveUpdates, projects.filter((project) => project.scope.en === "Game update" || project.scope.en === "Major game update").length],
+  ] as const;
   const visibleProjects = showAllProjects ? projects : projects.slice(0, INITIAL_PROJECT_COUNT);
 
-  return <><Header /><main><Hero /><section id="projects" className="section projects-section"><div className="container"><SectionTitle eyebrow={copy.projects.eyebrow} title={copy.projects.title} description={copy.projects.description} /><div className="project-grid">{visibleProjects.map((project) => <ProjectCard key={project.id} project={project} onOpen={openProject} />)}</div>{projects.length > INITIAL_PROJECT_COUNT && <div className="projects-toggle-wrap"><button className="projects-toggle" type="button" onClick={() => setShowAllProjects((current) => !current)} aria-expanded={showAllProjects}>{showAllProjects ? copy.projects.showLess : copy.projects.viewAll}<span aria-hidden="true">{showAllProjects ? "−" : "+"}</span></button></div>}</div></section><Capabilities /><TechStack /><WorkProcess /><About /><Contact /></main><Footer /><ProjectModal key={selectedProject?.id ?? "closed"} project={selectedProject} onClose={closeProject} /></>;
+  return <><Header /><main><Hero /><section id="projects" className="section projects-section"><div className="container"><SectionTitle eyebrow={copy.projects.eyebrow} title={copy.projects.title} description={copy.projects.description} /><div className="project-stats">{projectStats.map(([label, value]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div><div className="project-grid">{visibleProjects.map((project) => <ProjectCard key={project.id} project={project} onOpen={openProject} />)}</div>{projects.length > INITIAL_PROJECT_COUNT && <div className="projects-toggle-wrap"><button className="projects-toggle" type="button" onClick={() => setShowAllProjects((current) => !current)} aria-expanded={showAllProjects}>{showAllProjects ? copy.projects.showLess : copy.projects.viewAll}<span aria-hidden="true">{showAllProjects ? "−" : "+"}</span></button></div>}</div></section><Capabilities /><TechStack /><WorkProcess /><About /><Contact /></main><Footer /><ProjectModal key={selectedProject?.id ?? "closed"} project={selectedProject} onClose={closeProject} /></>;
 }

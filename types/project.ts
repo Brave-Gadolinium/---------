@@ -41,6 +41,7 @@ export interface Project {
   shortDescription: LocalizedText;
   description: LocalizedText;
   role: LocalizedText;
+  scope: LocalizedText;
   engine: string;
   language: string;
   platform: string;
@@ -51,6 +52,7 @@ export interface Project {
   accent: LocalizedText;
   tags: string[];
   highlights: LocalizedText[];
+  responsibilities?: LocalizedText[];
   systems: ProjectSystem[];
   architecture: {
     nodes: ArchitectureNode[];
