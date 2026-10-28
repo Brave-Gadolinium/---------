@@ -164,7 +164,7 @@ end`),
 end`),
   },
   "sportik-city": {
-    responsibilities: [text("Project development from scratch with Hybrid", "Разработка проекта с нуля в команде Hybrid"), text("Tag, gym, quiz and duel activities", "Салки, качалка, квиз и дуэль"), text("Shared reward flow across minigames", "Общая система наград мини-игр")],
+    responsibilities: [text("Project development from scratch", "Разработка проекта с нуля"), text("Tag, gym, quiz and duel activities", "Салки, качалка, квиз и дуэль"), text("Shared reward flow across minigames", "Общая система наград мини-игр")],
     codeExamples: example("Shared minigame contract", "Общий контракт мини-игр", "Independent activities report validated results through one shared contract.", "Независимые активности передают проверенные результаты через общий контракт.", `function MinigameService:Finish(player, activityId, result)
     local session = self.sessions[player]
     if not session or session.activityId ~= activityId then return end

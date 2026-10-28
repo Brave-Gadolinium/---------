@@ -11,8 +11,8 @@ export const siteConfig = {
     "Разрабатываю игровые системы, клиент-серверную архитектуру и масштабируемые Roblox-проекты.",
   ),
   availableForWork: true,
-  experienceYears: "2+",
-  studioCount: "05",
+  experienceYears: "5+",
+  studioCount: "04",
   projectCount: "16",
   profileImage: "/profile/nikita.png",
   cv: {
@@ -34,11 +34,10 @@ export const focusAreas = [
 ] as const;
 
 export const workExperience = [
-  { company: "DeepFox", duration: text("Oct 2025 — Aug 2026 · 11 months", "Октябрь 2025 — август 2026 · 11 месяцев"), role: text("Lua Developer", "Разработчик Lua"), description: text("Built Roblox games from the ground up.", "Создание игр с нуля в Roblox Studio.") },
-  { company: "Indigo", duration: text("May 2025 — Oct 2025 · 6 months", "Май 2025 — октябрь 2025 · 6 месяцев"), role: text("Roblox Developer", "Roblox-разработчик"), description: text("Built games from scratch, supported live projects and shipped updates.", "Создание игр с нуля, поддержка выпущенных проектов и разработка обновлений.") },
-  { company: "Hybrid", duration: text("Apr 2025 — Jul 2025 · 4 months", "Апрель 2025 — июль 2025 · 4 месяца"), role: text("Roblox Developer", "Roblox-разработчик"), description: text("Project-based Roblox Studio development for branded experiences.", "Проектная разработка брендированных игр в Roblox Studio.") },
-  { company: "Maff", duration: text("Apr 2025 · 1 month", "Апрель 2025 · 1 месяц"), role: text("Roblox Studio Developer", "Разработчик Roblox Studio"), description: text("Project development and support, including Luana's Maze for Kinopoisk.", "Создание и поддержка проектов, включая «Лабиринт Луаны» для Кинопоиска.") },
-  { company: "Protagonist", duration: text("Oct 2024 — Mar 2025 · 6 months", "Октябрь 2024 — март 2025 · 6 месяцев"), role: text("Roblox Developer", "Roblox-разработчик"), description: text("Roblox game development in a startup team.", "Разработка Roblox-игр в команде стартапа.") },
+  { company: "DeepFox", duration: text("Sep 2025 — Oct 2026 · 1 year 2 months", "Сентябрь 2025 — октябрь 2026 · 1 год 2 месяца"), role: text("Senior Tech Lead", "Senior Tech Lead"), description: text("Led 3 programmers and coordinated cross-functional game development from brief to release. Built Overture, an internal framework that standardized architecture, reduced bugs and sped up development. Ran daily stand-ups and technical interviews; interviewed 38 candidates, hired 3, and shipped 26 games.", "Руководил командой из 3 программистов и координировал разработку игр по ТЗ вместе с геймдизайнерами, дизайнерами, саундмейкерами, 3D-моделлерами, программистами и продакт-менеджером. Создал внутренний фреймворк Overture: он стандартизировал архитектуру проектов, помог снизить число багов и ускорил разработку. Проводил ежедневные стендапы и технические собеседования; провёл 38 интервью, нанял 3 разработчиков, участвовал в запуске 26 игр.") },
+  { company: "Indigo", duration: text("Sep 2024 — Sep 2025 · 1 year", "Сентябрь 2024 — сентябрь 2025 · 1 год"), role: text("Middle+ → Senior Roblox Developer", "Middle+ → Senior Roblox-разработчик"), description: text("Maintained and optimized popular Roblox games, refactored code, refreshed visuals and updated mechanics in collaboration with a producer, 3D artists and developers.", "Поддерживал и оптимизировал популярные игры, рефакторил код, обновлял визуальное оформление и игровые механики. Работал с продюсером, 3D-художниками и программистами.") },
+  { company: "Playton", duration: text("Aug 2022 — Jul 2024 · 2 years", "Август 2022 — июль 2024 · 2 года"), role: text("Junior+ → Middle Roblox Developer", "Junior+ → Middle Roblox-разработчик"), description: text("Built games from technical briefs and supported acquired titles. Optimized and refactored code, updated mechanics, refreshed visuals and built environments in collaboration with a producer.", "Создавал игры по ТЗ и поддерживал купленные компанией проекты. Оптимизировал и рефакторил код, обновлял механики и визуальное оформление, занимался билдингом. Работал с продюсером.") },
+  { company: "CODDY", duration: text("Sep 2021 — Aug 2022 · 1 year", "Сентябрь 2021 — август 2022 · 1 год"), role: text("Intern", "Стажёр"), description: text("Created Roblox games from technical briefs, collaborated with a producer and built game environments.", "Создавал игры по ТЗ, работал с продюсером и занимался билдингом.") },
 ] as const;
 
 export const capabilities = [
@@ -50,7 +49,7 @@ export const capabilities = [
   { title: text("Optimization", "Оптимизация"), description: text("Profiling, refactoring, networking and performance improvements.", "Профилирование, рефакторинг, сеть и повышение производительности."), details: [text("Profiling", "Профилирование"), text("Networking", "Сеть"), text("Memory", "Память"), text("Scalability", "Масштабирование")] },
 ] as const;
 
-export const techStack = ["Luau", "Roblox Studio", "Client / Server", "RemoteEvent", "RemoteFunction", "DataStore", "MemoryStore", "ProfileService", "TeleportService", "PathfindingService", "TweenService", "MicroProfiler", "Rojo", "Wally", "Git", "OOP"] as const;
+export const techStack = ["Luau", "roblox-ts", "Rojo", "Wally", "Rokit", "RbxUtil", "Git", "GitHub", "Roblox Studio MCP", "Cursor", "VS Code", "Confluence", "Slack", "Discord", "Adaptive UI", "Environment Building", "AI Asset Generation"] as const;
 
 export const workflow = [
   ["01", text("UNDERSTAND", "ИЗУЧИТЬ"), text("Clarify gameplay requirements, constraints and dependencies.", "Уточнить требования к геймплею, ограничения и зависимости.")],

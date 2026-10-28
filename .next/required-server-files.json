@@ -105,7 +105,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "D:\\Революция\\Портфолио",
+    "outputFileTracingRoot": "C:\\Users\\Никита\\Desktop\\Программы\\---------",
     "enablePrerenderSourceMaps": true,
     "cacheComponents": false,
     "cacheLife": {
@@ -175,7 +175,7 @@
       "proxyPrefetch": "flexible",
       "optimisticClientCache": true,
       "manualClientBasePath": false,
-      "cpus": 7,
+      "cpus": 11,
       "memoryBasedWorkersCount": false,
       "imgOptConcurrency": null,
       "imgOptOperationCache": null,
@@ -321,14 +321,14 @@
     "htmlLimitedBots": "[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight",
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.js",
-    "repoRoot": "D:\\Революция\\Портфолио",
+    "repoRoot": "C:\\Users\\Никита\\Desktop\\Программы\\---------",
     "turbopack": {
-      "root": "D:\\Революция\\Портфолио"
+      "root": "C:\\Users\\Никита\\Desktop\\Программы\\---------"
     },
     "distDirRoot": ".next",
     "supportsImmutableAssets": false
   },
-  "appDir": "D:\\Революция\\Портфолио",
+  "appDir": "C:\\Users\\Никита\\Desktop\\Программы\\---------",
   "relativeAppDir": "",
   "files": [
     ".next\\package.json",

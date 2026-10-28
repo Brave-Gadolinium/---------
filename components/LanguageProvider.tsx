@@ -17,7 +17,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const savedLanguage = window.localStorage.getItem("portfolio-language");
     const initialLanguage: Language = savedLanguage === "ru" || savedLanguage === "en"
       ? savedLanguage
-      : window.navigator.language.toLowerCase().startsWith("ru") ? "ru" : "en";
+      : "en";
 
     document.documentElement.lang = initialLanguage;
     queueMicrotask(() => setLanguage(initialLanguage));
