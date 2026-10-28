@@ -254,6 +254,7 @@ interface CommercialProjectInput {
   role: LocalizedText;
   scope: LocalizedText;
   url: string;
+  cover?: string;
   accent: LocalizedText;
   tags: string[];
   highlights: LocalizedText[];
@@ -274,6 +275,7 @@ function commercialProject(input: CommercialProjectInput): Project {
     platform: "Roblox",
     status: text("Released", "Выпущен"),
     robloxUrl: input.url,
+    cover: input.cover,
     accent: input.accent,
     tags: input.tags,
     highlights: input.highlights,
@@ -368,6 +370,12 @@ const commercialProjects: Project[] = [
     summary: text("Built a battle simulator with sword pulling, NPC combat, cutscenes, core progression and monetization.", "С нуля разработал боевой симулятор с вытягиванием меча, сражениями с NPC, катсценами, основным циклом прогрессии и монетизацией."),
     role: text("Game Developer", "Разработчик игры"), scope: projectScopes.builtFromScratch, url: "https://www.roblox.com/games/116365244400370/Pull-the-Sword-Battle-Simulator", accent: text("PULL & FIGHT", "ТЯНИ И СРАЖАЙСЯ"), tags: ["From Scratch", "Combat", "Monetization"],
     highlights: [text("Built from scratch", "Создан с нуля"), text("Sword-pulling mechanic", "Механика вытягивания меча"), text("NPC combat and cutscenes", "Бой с NPC и катсцены")],
+  }),
+  commercialProject({
+    id: "one-fps-knife", title: "+1 FPS KNIFE", type: text("FPS Arena · Knife Combat", "FPS-арена · Ножевой бой"),
+    summary: text("A Roblox FPS arena experience centered on knife combat.", "FPS-арена в Roblox с боями на ножах."),
+    role: text("Roblox Game Developer", "Разработчик Roblox-игры"), scope: text("FPS Arena", "FPS-арена"), url: "https://www.roblox.com/games/93231940765231/1-Knife-Arena-FPS", cover: "/projects/1-fps-knife/cover.webp", accent: text("KNIFE ARENA", "НОЖЕВАЯ АРЕНА"), tags: ["FPS", "Knife Combat", "Arena"],
+    highlights: [text("First-person arena", "Арена от первого лица"), text("Knife combat", "Бои на ножах"), text("Roblox experience", "Игра в Roblox")],
   }),
 ];
 

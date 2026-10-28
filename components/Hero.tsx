@@ -47,7 +47,7 @@ export function Hero() {
           <div className="hero-proof">
             <div><strong>{siteConfig.experienceYears}</strong><span>{copy.hero.years}</span></div>
             <div><strong>{siteConfig.studioCount}</strong><span>{copy.hero.studios}</span></div>
-            <div><strong>{siteConfig.projectCount}</strong><span>{copy.hero.releases}</span></div>
+            <div><strong>{siteConfig.projectStats.total}</strong><span>{copy.hero.releases}</span></div>
           </div>
         </motion.div>
 

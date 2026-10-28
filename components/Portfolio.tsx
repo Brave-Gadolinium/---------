@@ -12,6 +12,7 @@ import { projects } from "@/data/projects";
 import type { Project } from "@/types/project";
 import { LanguageProvider, useLanguage } from "@/components/LanguageProvider";
 import { getMessages } from "@/data/i18n";
+import { siteConfig } from "@/data/site";
 
 const INITIAL_PROJECT_COUNT = 3;
 
@@ -71,10 +72,10 @@ function PortfolioContent() {
   }, []);
 
   const projectStats = [
-    [copy.projects.stats.total, projects.length],
-    [copy.projects.stats.builtFromScratch, projects.filter((project) => project.scope.en === "Built from scratch").length],
-    [copy.projects.stats.majorUpdates, projects.filter((project) => project.scope.en === "Major game update").length],
-    [copy.projects.stats.liveUpdates, projects.filter((project) => project.scope.en === "Game update" || project.scope.en === "Major game update").length],
+    [copy.projects.stats.total, siteConfig.projectStats.total],
+    [copy.projects.stats.builtFromScratch, siteConfig.projectStats.builtFromScratch],
+    [copy.projects.stats.majorUpdates, siteConfig.projectStats.majorUpdates],
+    [copy.projects.stats.liveUpdates, siteConfig.projectStats.liveUpdates],
   ] as const;
   const visibleProjects = showAllProjects ? projects : projects.slice(0, INITIAL_PROJECT_COUNT);
 

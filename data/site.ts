@@ -13,7 +13,12 @@ export const siteConfig = {
   availableForWork: true,
   experienceYears: "5+",
   studioCount: "04",
-  projectCount: "16",
+  projectStats: {
+    total: "100+",
+    builtFromScratch: "30+",
+    majorUpdates: "75+",
+    liveUpdates: "10+",
+  },
   profileImage: "/profile/nikita.png",
   cv: {
     en: "/cv/nikita-roblox-developer-cv-en.pdf",
